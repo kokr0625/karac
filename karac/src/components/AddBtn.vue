@@ -1,15 +1,22 @@
 <template>
-  <div class="text-center">
-    <v-btn @click="add">
+  <v-container grid-list-xs>
+    <v-btn class="text-center" @click="add">
       <v-icon left>mdi-plus</v-icon>Add
     </v-btn>
     <p />
-    <component v-for="item in items" :key="item" :is="item"></component>
-  </div>
+    <v-row>
+      <v-col cols="4">
+        <input-form v-for="item in items" :key="item" :is="item"></input-form>
+      </v-col>
+    </v-row>
+    <card-frame></card-frame>
+  </v-container>
 </template>
 
 <script>
-import InputForm from "../components/InputForm";
+import InputForm from "./InputForm";
+import CardFrame from "./CardFrame";
+
 export default {
   data() {
     return {
@@ -22,7 +29,8 @@ export default {
     }
   },
   components: {
-    InputForm
+    InputForm,
+    CardFrame
   }
 };
 </script>

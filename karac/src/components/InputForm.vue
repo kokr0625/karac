@@ -12,8 +12,15 @@
 
 <script>
 export default {
+    data() {
+        return {
+            name: '',
+            label: '',
+            id: '',
+            }
 
-}
+    }
+};
 </script>
 
 <style>
